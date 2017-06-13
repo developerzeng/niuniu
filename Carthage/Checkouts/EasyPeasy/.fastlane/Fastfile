@@ -1,0 +1,27 @@
+fastlane_version "1.66.0"
+default_platform :ios
+
+platform :ios do
+
+  desc "Runs all the tests"
+  lane :travis do
+    workspace = "Example/EasyPeasy.xcworkspace"
+
+    # Run tests (iOS)
+    scheme = "EasyPeasy-Example-iOS"
+    scan(
+      scheme: scheme,
+      workspace: workspace,
+      device: "iPhone 6s",
+      code_coverage: true
+    )
+
+    # Check code coverage (iOS)
+    xcov(
+      scheme: scheme,
+      workspace: workspace,
+      exclude_targets: "Demo.app,Demo macOS.app"
+    )
+  end
+
+end

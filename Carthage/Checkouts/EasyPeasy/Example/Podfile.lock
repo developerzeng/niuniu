@@ -1,0 +1,16 @@
+PODS:
+  - EasyPeasy (0.3.0)
+
+DEPENDENCIES:
+  - EasyPeasy (from `../`)
+
+EXTERNAL SOURCES:
+  EasyPeasy:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  EasyPeasy: b15e40e2d068a84c1b2259f15ac01b191c3cd4e3
+
+PODFILE CHECKSUM: af7a68a3145027932758a0afae88cb4387fa896f
+
+COCOAPODS: 1.0.1

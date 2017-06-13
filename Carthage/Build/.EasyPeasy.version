@@ -1,0 +1,9 @@
+{
+  "commitish" : "1.4.2",
+  "iOS" : [
+    {
+      "hash" : "c8091833b4577985d5212d8401ec3f1cc295e074a3dc59592fd52a68d33ecfa1",
+      "name" : "EasyPeasy"
+    }
+  ]
+}

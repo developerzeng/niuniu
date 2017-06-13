@@ -1,0 +1,9 @@
+{
+  "commitish" : "2.2.0",
+  "iOS" : [
+    {
+      "hash" : "ec101271da7e613f98ca0cd40e26075b5e8f0518aeb1385e5c957d72cda63552",
+      "name" : "RAMAnimatedTabBarController"
+    }
+  ]
+}
