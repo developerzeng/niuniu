@@ -59,6 +59,8 @@
 		6D8307881EEFF386001112AA /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D83077B1EEFF386001112AA /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		6D8307891EEFF386001112AA /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D83077D1EEFF386001112AA /* View+MASAdditions.m */; };
 		6D83078A1EEFF386001112AA /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8307801EEFF386001112AA /* ViewController+MASAdditions.m */; };
+		6D83078D1EF0DC3E001112AA /* LQKGeneralWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D83078C1EF0DC3E001112AA /* LQKGeneralWebViewController.m */; };
+		6D8307901EF0DC59001112AA /* TOWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D83078F1EF0DC59001112AA /* TOWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +157,10 @@
 		6D83077E1EEFF386001112AA /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		6D83077F1EEFF386001112AA /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		6D8307801EEFF386001112AA /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		6D83078B1EF0DC3E001112AA /* LQKGeneralWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQKGeneralWebViewController.h; sourceTree = "<group>"; };
+		6D83078C1EF0DC3E001112AA /* LQKGeneralWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQKGeneralWebViewController.m; sourceTree = "<group>"; };
+		6D83078E1EF0DC59001112AA /* TOWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOWebViewController.h; sourceTree = "<group>"; };
+		6D83078F1EF0DC59001112AA /* TOWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +315,10 @@
 				6D8307621EEFF300001112AA /* WebViewXib.m */,
 				6D8307631EEFF300001112AA /* WKWebViewController.h */,
 				6D8307641EEFF300001112AA /* WKWebViewController.m */,
+				6D83078B1EF0DC3E001112AA /* LQKGeneralWebViewController.h */,
+				6D83078C1EF0DC3E001112AA /* LQKGeneralWebViewController.m */,
+				6D83078E1EF0DC59001112AA /* TOWebViewController.h */,
+				6D83078F1EF0DC59001112AA /* TOWebViewController.m */,
 			);
 			path = OC;
 			sourceTree = "<group>";
@@ -537,11 +547,13 @@
 				6D8307851EEFF386001112AA /* MASViewAttribute.m in Sources */,
 				6D8307841EEFF386001112AA /* MASLayoutConstraint.m in Sources */,
 				6D2F2A5B1EEE9C65003C0B61 /* NetWorkManager.swift in Sources */,
+				6D83078D1EF0DC3E001112AA /* LQKGeneralWebViewController.m in Sources */,
 				6D2F2A5A1EEE9C65003C0B61 /* UIViewExtensions.swift in Sources */,
 				6D8307811EEFF386001112AA /* MASCompositeConstraint.m in Sources */,
 				6D2F2A771EEF7F09003C0B61 /* FgView.swift in Sources */,
 				6D2F2A511EEE9C65003C0B61 /* NavViewController.swift in Sources */,
 				6D2F2A6A1EEEA0DC003C0B61 /* GuidanceViewController.swift in Sources */,
+				6D8307901EF0DC59001112AA /* TOWebViewController.m in Sources */,
 				6D2F2A4F1EEE9C65003C0B61 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

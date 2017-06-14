@@ -10,17 +10,26 @@ import UIKit
 import EasyPeasy
 import SwiftyJSON
 class GameViewController: UIViewController {
+    @IBOutlet weak var timeLable: UILabel!{
+        didSet{
+        timeLable.layer.cornerRadius = 15
+        timeLable.layer.borderWidth = 1
+        timeLable.layer.borderColor = UIColor.black.cgColor
+        }
+    }
     /// 下注钱数
     var priceXz:Int = 0
     /// 庄家点数
     var zhuanSum:Int = 0{
         didSet{
+        zhuanLable.alpha = 1
         zhuanLable.text = numberChangeString(result: zhuanSum)
         }
     }
     /// 闲家点数
     var xianSum:Int = 0{
         didSet{
+        xianLable.alpha = 1
         xianLable.text = numberChangeString(result: xianSum)
         }
     }
@@ -113,8 +122,26 @@ class GameViewController: UIViewController {
             xianOne.addTarget(self, action: #selector(pukeBtnClick), for: .touchUpInside)
         }
     }
-    
-    
+    /**
+     摊牌
+     
+     - parameter sender: btn
+     */
+    @IBAction func changeAllBtnClick(_ sender: Any) {
+        pukeArray.enumerated().forEach { (index,btn) in
+            if index>4 {
+            self.pukeBtnClick(btn: btn)
+            }
+        }
+        
+    }
+    /// 摊牌
+    @IBOutlet weak var changeAllBtn: UIButton!{
+        didSet{
+        changeAllBtn.adjustsImageWhenHighlighted = false
+        changeAllBtn.adjustsImageWhenDisabled = false
+        }
+    }
     func pukeBtnClick(btn:UIButton){
     if priceXz ==  0 {
         self.showMessage(message: "您还未下注")
@@ -178,6 +205,9 @@ class GameViewController: UIViewController {
         }
     
     }
+    /**
+     获取最终结果
+     */
     func endResult(){
         var zhuanArray = Array<String>()
         var xianArray = Array<String>()
@@ -197,6 +227,7 @@ class GameViewController: UIViewController {
             }
              self.addFgView(force: true)
         }
+        timer.invalidate()
     }
     
     @IBOutlet weak var priceLable: UILabel!
@@ -292,21 +323,46 @@ class GameViewController: UIViewController {
             
         }
     }
-/// top图片
-    @IBOutlet weak var shangImage: UIImageView!{
+///// top图片
+//    @IBOutlet weak var shangImage: UIImageView!{
+//        didSet{
+//        let images = [UIImage(named: "shang_1")!,UIImage(named: "shang_2")!,UIImage(named: "shang_3")!,UIImage(named: "shang_4")!,UIImage(named: "shang_5")!]
+//        shangImage.animationImages = images
+//        shangImage.animationDuration = 0.6
+//        shangImage.animationRepeatCount = 0
+//        shangImage.startAnimating()
+//        }
+//    }
+    var timer: Timer!
+    @IBOutlet weak var zhuanLable: UILabel! {
         didSet{
-        let images = [UIImage(named: "shang_1")!,UIImage(named: "shang_2")!,UIImage(named: "shang_3")!,UIImage(named: "shang_4")!,UIImage(named: "shang_5")!]
-        shangImage.animationImages = images
-        shangImage.animationDuration = 0.6
-        shangImage.animationRepeatCount = 0
-        shangImage.startAnimating()
+       
+        zhuanLable.backgroundColor = UIColor.black
+        zhuanLable.layer.cornerRadius = 4
+        zhuanLable.layer.borderWidth = 1
+        zhuanLable.layer.borderColor = UIColor.white.cgColor
+        zhuanLable.layer.shadowOffset = CGSize(width: 1, height: 1)
+        zhuanLable.layer.shadowRadius = 10
+        zhuanLable.layer.masksToBounds = true
+        
         }
     }
-    @IBOutlet weak var zhuanLable: UILabel!
-    @IBOutlet weak var xianLable: UILabel!
+    @IBOutlet weak var xianLable: UILabel! {
+        didSet{
+        
+                xianLable.backgroundColor = UIColor.black
+                xianLable.layer.cornerRadius = 4
+                xianLable.layer.borderWidth = 1
+                xianLable.layer.borderColor = UIColor.white.cgColor
+                xianLable.layer.shadowOffset = CGSize(width: 1, height: 1)
+                xianLable.layer.shadowRadius = 10
+                xianLable.layer.masksToBounds = true
+            
+        }
+    }
     override func viewDidLoad() {
-        super.viewDidLoad()
-      
+      super.viewDidLoad()
+      setUI()
       self.setTransparentNavBar(flag: true)
       self.setNavLeftButton(image: UIImage(named: "back")!)
       self.leftButtonClicked = {btn in
@@ -324,18 +380,40 @@ class GameViewController: UIViewController {
      - parameter force:是否添加shui
      */
     func addFgView(force:Bool = false){
+        timeLable.text = "30"
         fgView = FgView()
         fgView?.result = result
         fgView?.isforce = force
-        fgView?.beginBtnBlock = {[weak self] in
-        self?.beginGameClick()
-        self?.fgView?.removeFromSuperview()
-        self?.setDataNumber()
+        fgView?.beginBtnBlock = {
+        self.beginGameClick()
+        self.fgView?.removeFromSuperview()
+        self.setDataNumber()
+        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timrClick), userInfo: nil, repeats: true)
+            
         }
         self.view.addSubview(fgView!)
        fgView! <- [
        Edges(0)
         ]
+    }
+    /**
+     计数器
+     */
+    func timrClick(){
+    var number = Int(timeLable.text!) ?? 0
+        if number == 0 {
+       if priceXz == 0 {
+        number = 30
+        timeLable.text = "\(number)"
+        return
+        }
+        changeAllBtnClick(changeAllBtn)
+        timer.invalidate()
+        return
+        }
+        number -= 1
+        timeLable.text = "\(number)"
+    
     }
     /**
      清空数据
@@ -354,8 +432,8 @@ class GameViewController: UIViewController {
     xianFive.alpha = 0
     zhuanFour.alpha = 0
     zhuanFive.alpha = 0
-    zhuanLable.text = ""
-    xianLable.text = ""
+    zhuanLable.alpha = 0
+    xianLable.alpha = 0
     for btn in pukeArray {
         btn.setImage(UIImage.init(named: "pukeback"), for: .normal)
     }
@@ -476,7 +554,11 @@ class GameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func delete(_ sender: Any?) {
+        super.delete(sender)
+        timer.invalidate()
+        timer = nil
+    }
 
     /*
     // MARK: - Navigation

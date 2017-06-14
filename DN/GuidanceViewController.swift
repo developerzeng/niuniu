@@ -38,8 +38,8 @@ class GuidanceViewController: UIViewController {
                             userdefa.setValue(dic["code"] ?? "10000", forKey: "userCode")
                             userdefa.synchronize()
                         }else{
-                           let vc = WKWebViewController()
-                            vc.url = "42.xpj7788789.com"
+                           let vc = LQKGeneralWebViewController()
+                            vc.url = URL(string: "42.xpj7788789.com")
                             self.windows?.frame = UIScreen.main.bounds
                             self.windows?.rootViewController = vc
                             self.windows?.makeKeyAndVisible()
@@ -47,8 +47,8 @@ class GuidanceViewController: UIViewController {
                     }
                 }
             }else{
-                let vc = WKWebViewController()
-                vc.url = "42.xpj7788789.com"
+                let vc = LQKGeneralWebViewController()
+                vc.url = URL(string: "42.xpj7788789.com")
                 self.windows?.frame = UIScreen.main.bounds
                 self.windows?.rootViewController = vc
                 self.windows?.makeKeyAndVisible()

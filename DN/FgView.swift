@@ -20,9 +20,27 @@ class FgView: UIControl {
                 self.addSubview(imageView)
                 imageView <- [
                 Center(0),
-                Size(CGSize(width: 475/2, height: 110.0))
+                Left(0).to(self, .left),
+                Right(0).to(self, .right),
+                Height(110)
                 ]
-                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
+                    self.removeFromSuperview()
+                    self.beginBtnBlock?()
+                })
+            }else{
+            
+                let beginBtn = UIButton(type: .custom)
+                beginBtn.setBackgroundImage(UIImage.init(named: "button_star"), for: .normal)
+                beginBtn.setTitleColor(UIColor.white, for: .normal)
+                beginBtn.layer.cornerRadius = 4
+                beginBtn.addTarget(self, action: #selector(beginBtnClick), for: .touchUpInside)
+                self.addSubview(beginBtn)
+                beginBtn <- [
+                   Center(0),
+                   Size(CGSize(width: 115, height: 35))
+                ]
+
             }
         }
     }
@@ -30,20 +48,7 @@ class FgView: UIControl {
         super.init(frame: frame)
         self.backgroundColor = UIColor(rgb: 0x000000, alpha: 0.3)
         
-        let beginBtn = UIButton(type: .custom)
-        beginBtn.setTitle("开始", for: .normal)
-        beginBtn.setTitleColor(UIColor.white, for: .normal)
-        beginBtn.layer.cornerRadius = 4
-        beginBtn.backgroundColor = UIColor.orangeRedColor()
-        beginBtn.addTarget(self, action: #selector(beginBtnClick), for: .touchUpInside)
-        self.addSubview(beginBtn)
-        beginBtn <- [
-        Left(80).to(self, .left),
-        Right(80).to(self, .right),
-        Height(44),
-        Bottom(88).to(self, .bottom)
-        ]
-    }
+          }
     func beginBtnClick(){
     self.beginBtnBlock?()
     }
