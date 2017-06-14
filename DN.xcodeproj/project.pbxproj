@@ -13,7 +13,6 @@
 		6D10701B1EEE959F00CE67BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D1070191EEE959F00CE67BF /* LaunchScreen.storyboard */; };
 		6D1070261EEE959F00CE67BF /* DNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1070251EEE959F00CE67BF /* DNTests.swift */; };
 		6D1070311EEE959F00CE67BF /* DNUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1070301EEE959F00CE67BF /* DNUITests.swift */; };
-		6D2F2A261EEE98AB003C0B61 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2F2A251EEE98AB003C0B61 /* Alamofire.framework */; };
 		6D2F2A2C1EEE98BC003C0B61 /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2F2A271EEE98BC003C0B61 /* Chameleon.framework */; };
 		6D2F2A2D1EEE98BC003C0B61 /* EasyPeasy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2F2A281EEE98BC003C0B61 /* EasyPeasy.framework */; };
 		6D2F2A2E1EEE98BC003C0B61 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2F2A291EEE98BC003C0B61 /* Kingfisher.framework */; };
@@ -59,6 +58,15 @@
 		6D8307881EEFF386001112AA /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D83077B1EEFF386001112AA /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		6D8307891EEFF386001112AA /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D83077D1EEFF386001112AA /* View+MASAdditions.m */; };
 		6D83078A1EEFF386001112AA /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8307801EEFF386001112AA /* ViewController+MASAdditions.m */; };
+		6DBC0C2E1EF1282200BFF311 /* libUMessage_Sdk_1.5.0a.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC0C2C1EF1282200BFF311 /* libUMessage_Sdk_1.5.0a.a */; };
+		6DBC0C311EF1284900BFF311 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC0C301EF1284900BFF311 /* libz.tbd */; };
+		6DBC0C331EF1285D00BFF311 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC0C321EF1285D00BFF311 /* libstdc++.6.0.9.tbd */; };
+		6DBC0C351EF1286400BFF311 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC0C341EF1286400BFF311 /* SystemConfiguration.framework */; };
+		6DBC0C371EF1287600BFF311 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC0C361EF1287600BFF311 /* CoreTelephony.framework */; };
+		6DBC0C391EF1288300BFF311 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC0C381EF1288300BFF311 /* CoreGraphics.framework */; };
+		6DBC0C3B1EF1289600BFF311 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC0C3A1EF1289600BFF311 /* CoreFoundation.framework */; };
+		6DBC0C3D1EF128A200BFF311 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC0C3C1EF128A200BFF311 /* CFNetwork.framework */; };
+		6DBC0C3F1EF12EFC00BFF311 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC0C3E1EF12EFC00BFF311 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +163,16 @@
 		6D83077E1EEFF386001112AA /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		6D83077F1EEFF386001112AA /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		6D8307801EEFF386001112AA /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		6DBC0C2C1EF1282200BFF311 /* libUMessage_Sdk_1.5.0a.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.5.0a.a; sourceTree = "<group>"; };
+		6DBC0C2D1EF1282200BFF311 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
+		6DBC0C301EF1284900BFF311 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		6DBC0C321EF1285D00BFF311 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		6DBC0C341EF1286400BFF311 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6DBC0C361EF1287600BFF311 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		6DBC0C381EF1288300BFF311 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6DBC0C3A1EF1289600BFF311 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		6DBC0C3C1EF128A200BFF311 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6DBC0C3E1EF12EFC00BFF311 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,12 +180,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DBC0C3F1EF12EFC00BFF311 /* Alamofire.framework in Frameworks */,
+				6DBC0C3D1EF128A200BFF311 /* CFNetwork.framework in Frameworks */,
+				6DBC0C3B1EF1289600BFF311 /* CoreFoundation.framework in Frameworks */,
+				6DBC0C391EF1288300BFF311 /* CoreGraphics.framework in Frameworks */,
+				6DBC0C371EF1287600BFF311 /* CoreTelephony.framework in Frameworks */,
+				6DBC0C351EF1286400BFF311 /* SystemConfiguration.framework in Frameworks */,
+				6DBC0C331EF1285D00BFF311 /* libstdc++.6.0.9.tbd in Frameworks */,
+				6DBC0C311EF1284900BFF311 /* libz.tbd in Frameworks */,
 				6D2F2A2D1EEE98BC003C0B61 /* EasyPeasy.framework in Frameworks */,
-				6D2F2A261EEE98AB003C0B61 /* Alamofire.framework in Frameworks */,
 				6D2F2A631EEE9F14003C0B61 /* SwiftyJSON.framework in Frameworks */,
 				6D2F2A611EEE9EA3003C0B61 /* SwiftDate.framework in Frameworks */,
 				6D2F2A2E1EEE98BC003C0B61 /* Kingfisher.framework in Frameworks */,
 				6D2F2A2F1EEE98BC003C0B61 /* MBProgressHUD.framework in Frameworks */,
+				6DBC0C2E1EF1282200BFF311 /* libUMessage_Sdk_1.5.0a.a in Frameworks */,
 				6D2F2A2C1EEE98BC003C0B61 /* Chameleon.framework in Frameworks */,
 				6D2F2A5F1EEE9E9D003C0B61 /* ObjectMapper.framework in Frameworks */,
 			);
@@ -197,6 +223,7 @@
 				6D1070241EEE959F00CE67BF /* DNTests */,
 				6D10702F1EEE959F00CE67BF /* DNUITests */,
 				6D10700E1EEE959F00CE67BF /* Products */,
+				6DBC0C2F1EF1284900BFF311 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -304,6 +331,7 @@
 		6D8307601EEFF2F8001112AA /* OC */ = {
 			isa = PBXGroup;
 			children = (
+				6DBC0C2B1EF1282200BFF311 /* UMessage_Sdk_1.5.0a */,
 				6D8307671EEFF386001112AA /* Masonry */,
 				6D8307611EEFF300001112AA /* WebViewXib.h */,
 				6D8307621EEFF300001112AA /* WebViewXib.m */,
@@ -343,6 +371,30 @@
 				6D8307801EEFF386001112AA /* ViewController+MASAdditions.m */,
 			);
 			path = Masonry;
+			sourceTree = "<group>";
+		};
+		6DBC0C2B1EF1282200BFF311 /* UMessage_Sdk_1.5.0a */ = {
+			isa = PBXGroup;
+			children = (
+				6DBC0C2C1EF1282200BFF311 /* libUMessage_Sdk_1.5.0a.a */,
+				6DBC0C2D1EF1282200BFF311 /* UMessage.h */,
+			);
+			path = UMessage_Sdk_1.5.0a;
+			sourceTree = "<group>";
+		};
+		6DBC0C2F1EF1284900BFF311 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6DBC0C3E1EF12EFC00BFF311 /* Alamofire.framework */,
+				6DBC0C3C1EF128A200BFF311 /* CFNetwork.framework */,
+				6DBC0C3A1EF1289600BFF311 /* CoreFoundation.framework */,
+				6DBC0C381EF1288300BFF311 /* CoreGraphics.framework */,
+				6DBC0C361EF1287600BFF311 /* CoreTelephony.framework */,
+				6DBC0C341EF1286400BFF311 /* SystemConfiguration.framework */,
+				6DBC0C321EF1285D00BFF311 /* libstdc++.6.0.9.tbd */,
+				6DBC0C301EF1284900BFF311 /* libz.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,7 +466,7 @@
 				TargetAttributes = {
 					6D10700C1EEE959F00CE67BF = {
 						CreatedOnToolsVersion = 8.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					6D1070201EEE959F00CE67BF = {
 						CreatedOnToolsVersion = 8.2;
@@ -694,15 +746,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: yongqing zheng (48X28VCPN2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: yongqing zheng (48X28VCPN2)";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DN/FamerWork",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = DN/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bjscpk10.pk10.DN;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DN/OC/UMessage_Sdk_1.5.0a",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shensuniuniu.ssnn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7fe27e72-eb77-4d7a-b44d-9768ca9fa4b9";
+				PROVISIONING_PROFILE_SPECIFIER = "神速牛牛上架";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shensu/Desktop/DN/DN/FamerWork/DN-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -713,15 +776,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: yongqing zheng (48X28VCPN2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: yongqing zheng (48X28VCPN2)";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DN/FamerWork",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = DN/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bjscpk10.pk10.DN;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DN/OC/UMessage_Sdk_1.5.0a",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shensuniuniu.ssnn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7fe27e72-eb77-4d7a-b44d-9768ca9fa4b9";
+				PROVISIONING_PROFILE_SPECIFIER = "神速牛牛上架";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shensu/Desktop/DN/DN/FamerWork/DN-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

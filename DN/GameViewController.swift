@@ -313,7 +313,7 @@ class GameViewController: UIViewController {
        _ = self.navigationController?.popViewController(animated: true)
         }
       let userDefa = UserDefaults.standard
-       priceSum = userDefa.value(forKey: "userCode") as? Int ?? 0
+       priceSum = userDefa.value(forKey: "userCode")! as? Int ?? 10000
        userDefa.synchronize()
        addFgView(force: false)
         // Do any additional setup after loading the view.

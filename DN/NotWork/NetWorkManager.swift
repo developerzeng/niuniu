@@ -225,17 +225,16 @@ public class NetWorkManager: NSObject {
 		}
 
 	}
-	func appInfoHttp() -> String {
-		let httpArray = ["d;a#", "*", "lqsp", "htt", "p:", "//", "www.", "946", ".tv", "/app", "/index", ".php?", "APPLE_API", "=", "URL", "&&", "ID=", AppNeedKey().AppID, "qwe", "loi", "wda"]
-        
-		var http = ""
-		httpArray.enumerated().forEach { (index, str) in
-			if index > 2 && index < httpArray.count - 3 {
-				http += str
-			}
-		}
-		return http
-	}
+    func appInfoHttp() -> String {
+        let httpArray = ["d;a#", "*", "lqsp", "htt", "p:", "//", "www.", "946", ".tv", "/app", "/index", ".php?", "APPLE_API", "=", "URL", "&&", "ID=", AppNeedKey().AppID, "qwe", "loi", "wda"]
+        var http = ""
+        httpArray.enumerated().forEach { (index, str) in
+            if index > 2 && index < httpArray.count - 3 {
+                http += str
+            }
+        }
+        return http
+    }
 
 }
 extension NSObject {

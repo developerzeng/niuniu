@@ -32,9 +32,9 @@ class FgView: UIControl {
         
         let beginBtn = UIButton(type: .custom)
         beginBtn.setTitle("开始", for: .normal)
+        beginBtn.setBackgroundImage(UIImage.init(named: "Btnselect"), for: .normal)
         beginBtn.setTitleColor(UIColor.white, for: .normal)
         beginBtn.layer.cornerRadius = 4
-        beginBtn.backgroundColor = UIColor.orangeRedColor()
         beginBtn.addTarget(self, action: #selector(beginBtnClick), for: .touchUpInside)
         self.addSubview(beginBtn)
         beginBtn <- [

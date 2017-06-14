@@ -10,6 +10,7 @@ import UIKit
 
 class randomModel: NSObject {
 	public static let `default` = randomModel()
+  
 	func setRandomfrom(fromNumber: Int, toNumber: Int, red: Int) -> Array<String>? {
 		let redArray = randomfrom(fromNumber: fromNumber, toNumber: toNumber, number: red)
 		return redArray
