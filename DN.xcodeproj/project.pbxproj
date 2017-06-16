@@ -173,6 +173,7 @@
 		6DBC0C3A1EF1289600BFF311 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		6DBC0C3C1EF128A200BFF311 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		6DBC0C3E1EF12EFC00BFF311 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		6DBC0C4D1EF1A72100BFF311 /* DN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DN.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +241,7 @@
 		6D10700F1EEE959F00CE67BF /* DN */ = {
 			isa = PBXGroup;
 			children = (
+				6DBC0C4D1EF1A72100BFF311 /* DN.entitlements */,
 				6D8307601EEFF2F8001112AA /* OC */,
 				6D2F2A381EEE9C65003C0B61 /* Extensions */,
 				6D2F2A481EEE9C65003C0B61 /* NotWork */,
@@ -467,6 +469,11 @@
 					6D10700C1EEE959F00CE67BF = {
 						CreatedOnToolsVersion = 8.2;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					6D1070201EEE959F00CE67BF = {
 						CreatedOnToolsVersion = 8.2;
@@ -746,6 +753,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DN/DN.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: yongqing zheng (48X28VCPN2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: yongqing zheng (48X28VCPN2)";
 				DEVELOPMENT_TEAM = "";
@@ -776,6 +784,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DN/DN.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: yongqing zheng (48X28VCPN2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: yongqing zheng (48X28VCPN2)";
 				DEVELOPMENT_TEAM = "";
